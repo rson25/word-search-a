@@ -191,7 +191,7 @@ const App: React.FC = () => {
   const handleCellClick = (row: number, col: number) => {
     dispatch({ type: 'SELECT_CELL', payload: [row, col] });
 
-    const selected: [number, number][] = [...state.selectedCells, [row, col]];
+    const selected = [...state.selectedCells, [row, col]];
     if (selected.length >= 2) {
       const word = getWordFromSelection(selected);
       if (WORDS.includes(word)) {
